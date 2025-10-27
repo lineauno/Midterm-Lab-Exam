@@ -1,9 +1,9 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TaskController;
 
-Route::apiResource('products', \App\Http\Controllers\ProductController::class);
-Route::apiResource('users', \App\Http\Controllers\UserController::class);
+Route::apiResource('tasks', TaskController::class);
 
-?>
+Route::put('tasks/{id}/complete', [TaskController::class, 'markAsCompleted']);
